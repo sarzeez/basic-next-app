@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import TextField from "@/components/form/TextField";
+import Link from "next/link";
 
 type FormValues = {
   username: string;
@@ -34,9 +35,10 @@ export default function LoginPage() {
         password: values.password,
         redirect: false,
       });
+      console.log({ response });
       const callbackUrl = searchParams.get("callbackUrl") || "/";
       if (response?.ok) {
-        router.push(callbackUrl);
+        router.push("/");
         return;
       }
       setError("Invalid credentials.");
@@ -73,12 +75,20 @@ export default function LoginPage() {
             placeholder="Password"
           />
 
-          <button
-            type="submit"
-            className="w-full border bg-gray-100 p-2 rounded hover:bg-slate-200"
-          >
-            Submit
-          </button>
+          <div>
+            <Link
+              href="/"
+              className="mb-1 text-right text-sm block hover:underline"
+            >
+              Home
+            </Link>
+            <button
+              type="submit"
+              className="w-full border bg-gray-100 p-2 rounded hover:bg-slate-200"
+            >
+              Submit
+            </button>
+          </div>
           {error ? (
             <p className="text-red-600 text-center capitalize">{error}</p>
           ) : null}

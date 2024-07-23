@@ -2,8 +2,10 @@ import { getServerSession, User, type NextAuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
 export const authOptions: NextAuthOptions = {
+  secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: "jwt",
+    maxAge: 60 * 1,
   },
   callbacks: {
     async jwt({ token, account }) {

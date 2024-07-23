@@ -1,18 +1,20 @@
-import { getServerAuthSession } from "@/config/auth";
+import ClientUserInfo from "@/components/ClientUserInfo";
+import UserInfo from "@/components/UserInfo";
 import Link from "next/link";
 
 export default async function Home() {
-  const session = await getServerAuthSession();
   return (
     <main className="flex items-center justify-center h-screen w-full bg-gray-200">
-      <div className="p-10 rounded-lg bg-white">
+      <div className="p-10 rounded-lg bg-white flex flex-col gap-3">
         <h1 className="text-3xl">Home Page</h1>
-        <ul>
-          <li className="hover:underline w-max">
-            <Link href="/auth/login">Login</Link>
-          </li>
-        </ul>
-        <div>User Session: {JSON.stringify(session)}</div>
+        <UserInfo />
+        <ClientUserInfo />
+        <Link
+          href="/dashboard"
+          className="hover:underline hover:text-blue-800 w-max"
+        >
+          Dashboard
+        </Link>
       </div>
     </main>
   );
