@@ -11,6 +11,7 @@
     "airbnb",
     "prettier",
     "eslint:recommended",
+    "plugin:tailwindcss/recommended",
     "next/core-web-vitals"
   ],
   "parserOptions": {
@@ -18,7 +19,7 @@
     "sourceType": "module",
     "ecmaFeatures": { "jsx": true }
   },
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "tailwindcss"],
   "rules": {
     "no-shadow": "off",
     "no-console": "warn",

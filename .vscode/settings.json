@@ -6,5 +6,11 @@
     "javascriptreact",
     "typescript",
     "typescriptreact"
+  ],
+  "editor.codeActionsOnSave": [
+    "source.addMissingImports",
+    "source.fixAll.eslint",
+    "source.fixAll.stylelint",
+    "source.fixAll.markdownlint"
   ]
 }
