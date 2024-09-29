@@ -21,8 +21,9 @@
   },
   "plugins": ["prettier", "tailwindcss"],
   "rules": {
-    "no-shadow": "off",
+    "no-shadow": "error",
     "no-console": "warn",
+    "prefer-const": "off",
     "arrow-body-style": "off",
     "import/extensions": "off",
     "curly": ["error", "multi"],
@@ -36,7 +37,7 @@
     "comma-dangle": "off", // let it handle by prettier
     "no-redeclare": "off", // let it handle by TypeScript
     "react/jsx-indent": "off", // let it handle by prettier
-    "no-unused-vars": "off", // let it handle by TypeScript
+    "no-unused-vars": "error", // let it handle by TypeScript
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "operator-linebreak": "off", // let it handle by prettier
     "object-curly-newline": "off", // let it handle by prettier
