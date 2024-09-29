@@ -19,7 +19,7 @@
     "sourceType": "module",
     "ecmaFeatures": { "jsx": true }
   },
-  "plugins": ["prettier", "tailwindcss"],
+  "plugins": ["prettier", "tailwindcss", "simple-import-sort"],
   "rules": {
     "no-shadow": "error",
     "no-console": "warn",
@@ -45,6 +45,12 @@
     "implicit-arrow-linebreak": "off", // let it handle by prettier
     "nonblock-statement-body-position": "off", // let it handle by prettier
     "react/jsx-one-expression-per-line": "off", // let it handle by prettier,
-    "import/no-dynamic-require": 0
+    "import/no-dynamic-require": 0,
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "import/order": "off",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error"
   }
 }
