@@ -12,5 +12,9 @@
     "source.fixAll.eslint",
     "source.fixAll.stylelint",
     "source.fixAll.markdownlint"
+  ],
+  "i18n-ally.localesPaths": [
+    "messages",
+    "src/i18n"
   ]
 }

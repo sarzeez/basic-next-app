@@ -51,6 +51,24 @@
     "import/order": "off",
     "import/first": "error",
     "import/newline-after-import": "error",
-    "import/no-duplicates": "error"
+    "import/no-duplicates": "error",
+    "import/no-extraneous-dependencies": ["off"],
+    "no-restricted-imports": [
+      "error",
+      {
+        "name": "next/link",
+        "message": "Please import from `@/i18n/routing` instead."
+      },
+      {
+        "name": "next/navigation",
+        "importNames": [
+          "redirect",
+          "permanentRedirect",
+          "useRouter",
+          "usePathname"
+        ],
+        "message": "Please import from `@/i18n/routing` instead."
+      }
+    ]
   }
 }
