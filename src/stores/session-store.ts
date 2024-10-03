@@ -27,6 +27,7 @@ export type UseSessionReturn = {
 }
 export function useSession(options?: UseSessionOptions): ClientSession {
   const sessionStore = useSessionStore()
+
   return {
     data: sessionStore.data,
     status: sessionStore.status,

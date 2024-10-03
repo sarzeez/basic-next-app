@@ -79,6 +79,7 @@ export const authConfig: AuthOptions = {
         newToken.id = user.id
         newToken.sessionToken = user.sessionToken
       }
+
       return newToken
     },
     async session({ token, session }) {
@@ -102,6 +103,7 @@ export async function getServerAuthSession(
 ) {
   try {
     const session = await getServerSession(...args, authConfig)
+
     return session
   } catch (error: unknown) {
     // Logger.error('Failed to get session', error)
@@ -116,5 +118,6 @@ export async function getCurrentUser(
     | []
 ) {
   const session = await getServerAuthSession(...args)
+
   return session?.user
 }
