@@ -37,7 +37,7 @@
     "comma-dangle": "off", // let it handle by prettier
     "no-redeclare": "off", // let it handle by TypeScript
     "react/jsx-indent": "off", // let it handle by prettier
-    "no-unused-vars": "error", // let it handle by TypeScript
+    "no-unused-vars": ["error", { "args": "none" }], // let it handle by TypeScript
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "operator-linebreak": "off", // let it handle by prettier
     "object-curly-newline": "off", // let it handle by prettier
@@ -53,6 +53,11 @@
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
     "import/no-extraneous-dependencies": ["off"],
+    "import/prefer-default-export": "off",
+    "react/destructuring-assignment": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off",
+    "newline-before-return": "error",
     "no-restricted-imports": [
       "error",
       {
