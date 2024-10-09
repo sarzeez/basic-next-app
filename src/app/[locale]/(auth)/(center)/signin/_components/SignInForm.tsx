@@ -4,7 +4,7 @@ import { signIn } from 'next-auth/react'
 import { type FormEventHandler, useState } from 'react'
 
 export const SignInForm = (props: { callbackUrl: string | undefined }) => {
-  const { callbackUrl = '/dashboard' } = props
+  const { callbackUrl = '/' } = props
 
   const [isLoading, setLoading] = useState(false)
 

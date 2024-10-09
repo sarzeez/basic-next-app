@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 import LocaleSwitcher from '@/components/LocaleSwitcher'
+import { LogOutButton } from '@/components/LogOutButton'
 import { Link } from '@/i18n/routing'
 
 export default function Home() {
@@ -25,7 +26,11 @@ export default function Home() {
           <li className="hover:text-blue-600 hover:underline">
             <Link href="/signin">Signin</Link>
           </li>
+          <li className="hover:text-blue-600 hover:underline">
+            <Link href="/profile">Profile</Link>
+          </li>
         </ul>
+        <LogOutButton />
         <LocaleSwitcher />
         <ol className="list-inside list-decimal text-center font-[family-name:var(--font-geist-mono)] text-sm sm:text-left">
           <li className="mb-2">{t('title')}</li>

@@ -35,18 +35,22 @@ export const authConfig: AuthOptions = {
         if (!credentials) throw new Error('No credentials provided')
 
         // Call an external API endpoint to sign in
-        const response = await fetch('', {
-          method: 'POST',
-          body: JSON.stringify(credentials),
-        })
+        const response = await fetch(
+          'https://jsonplaceholder.typicode.com/users/1',
+          {
+            method: 'GET',
+          }
+        )
 
         const result = await response.json()
 
         if (!result) throw new Error('Invalid credentials')
 
         return {
-          id: result.user.id,
-          sessionToken: result.sessionToken,
+          id: result.id,
+          name: result.name,
+          email: result.email,
+          sessionToken: `${result.name}_${result.email}`,
         }
       },
     }),

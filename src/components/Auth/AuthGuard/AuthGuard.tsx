@@ -2,10 +2,10 @@
 
 import { ArrowPathIcon } from '@heroicons/react/24/solid'
 import { useSearchParams } from 'next/navigation'
+import { useSession } from 'next-auth/react'
 import { useEffect } from 'react'
 
 import { usePathname, useRouter } from '@/i18n/routing'
-import { useSession } from '@/stores/session-store'
 
 type Props = {
   children: React.ReactNode
@@ -19,7 +19,7 @@ export const AuthGuard: React.FC<Props> = ({ children }) => {
 
   useEffect(() => {
     if (pathname === '/signin' && session.status === 'authenticated')
-      router.push('/dashboard')
+      router.push('/')
 
     if (session.status === 'unauthenticated')
       router.push(`/signin?${searchParams.toString()}`)
